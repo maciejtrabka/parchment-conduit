@@ -216,6 +216,8 @@ a:focus {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   margin: 0 0 0.5rem 0;
   line-height: 1.2;
+  /* Global h1 color would override inherited banner text; keep title readable on brown */
+  color: #fdf8f0 !important;
 }
 
 /* ——— Layout ——— */
@@ -366,6 +368,68 @@ a:focus {
 
 .article-page .banner .date {
   color: rgba(245, 233, 220, 0.85) !important;
+}
+
+/* Article banner: row layout, spaced actions, readable controls on dark gradient */
+.article-page .banner .article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 0.35rem;
+  min-height: 0;
+}
+
+.article-page .banner .article-meta .info {
+  flex: 0 1 auto;
+  min-width: 0;
+  margin: 0;
+}
+
+.article-page .banner .article-meta__actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+@media (max-width: 575.98px) {
+  .article-page .banner .article-meta__actions {
+    margin-left: 0;
+  }
+}
+
+.article-page .banner .article-meta__action-btn {
+  color: #fdf8f0 !important;
+  border: 1px solid rgba(255, 250, 240, 0.45) !important;
+  background: rgba(0, 0, 0, 0.14) !important;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 0.2rem 0.6rem;
+  line-height: 1.4;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.article-page .banner a.article-meta__action-btn:hover,
+.article-page .banner .article-meta__action-btn:hover {
+  color: #fff !important;
+  background: rgba(0, 0, 0, 0.22) !important;
+  border-color: rgba(255, 250, 240, 0.65) !important;
+  text-decoration: none;
+}
+
+.article-page .banner .article-meta__action-btn--danger {
+  color: #f0c4bc !important;
+  border-color: rgba(212, 140, 120, 0.5) !important;
+}
+
+.article-page .banner .article-meta__action-btn--danger:hover {
+  color: #ffded9 !important;
+  border-color: rgba(255, 180, 160, 0.65) !important;
+  background: rgba(80, 32, 24, 0.25) !important;
 }
 
 .post-preview,

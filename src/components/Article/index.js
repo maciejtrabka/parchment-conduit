@@ -44,7 +44,11 @@ class Article extends React.Component {
         <div className="banner">
           <div className="container">
 
-            <h1>{this.props.article.title}</h1>
+            <h1>
+              {this.props.article.title && this.props.article.title.trim()
+                ? this.props.article.title
+                : 'Untitled article'}
+            </h1>
             <ArticleMeta
               article={this.props.article}
               canModify={canModify} />
