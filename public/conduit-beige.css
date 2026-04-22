@@ -678,6 +678,12 @@ a:focus {
   padding-left: 1.1rem;
 }
 
+/* Auth forms: keep error list in the parchment family (softer than global errors) */
+.auth-page .error-messages,
+.auth-page .error-messages li {
+  color: var(--parchment-cream) !important;
+}
+
 .text-xs-center {
   text-align: center !important;
 }
