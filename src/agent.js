@@ -3,7 +3,10 @@ import _superagent from 'superagent';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
-const API_ROOT = 'https://conduit.productionready.io/api';
+const customApiRoot = process.env.REACT_APP_API_ROOT;
+const API_ROOT = customApiRoot
+  ? `${String(customApiRoot).replace(/\/$/, '')}/api`
+  : 'https://api.realworld.show/api';
 
 const encode = encodeURIComponent;
 const responseBody = res => res.body;
