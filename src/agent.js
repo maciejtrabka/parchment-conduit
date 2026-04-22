@@ -3,13 +3,10 @@ import _superagent from 'superagent';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
-// Same-origin base path only. The CRA dev server proxies /api → Conduit
-// (package.json "proxy"). On Vercel, do NOT use /api for the built app: many
-// Conduit/RealWorld templates add a project Redirect on /api → api.realworld.io
-// (307 + CORS). Production builds use /pc-api; vercel.json rewrites that to
-// conduit.productionready.io (no redirect in the browser).
-const API_ROOT =
-  process.env.NODE_ENV === 'development' ? '/api' : '/pc-api';
+const customApiRoot = process.env.REACT_APP_API_ROOT;
+const API_ROOT = customApiRoot
+  ? `${String(customApiRoot).replace(/\/$/, '')}/api`
+  : 'https://api.realworld.show/api';
 
 const encode = encodeURIComponent;
 const responseBody = res => res.body;

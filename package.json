@@ -2,7 +2,6 @@
   "name": "parchment-conduit",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://conduit.productionready.io",
   "devDependencies": {
     "@ai-sdk/openai-compatible": "^1.0.36",
     "@browserbasehq/stagehand": "^3.2.1",

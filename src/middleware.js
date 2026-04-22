@@ -30,11 +30,7 @@ const promiseMiddleware = store => next => action => {
           return
         }
         action.error = true;
-        const res = error.response;
-        const body = res && res.body;
-        action.payload = (body && typeof body === 'object')
-          ? body
-          : { errors: { '': [error.message || 'Request failed'] } };
+        action.payload = error.response.body;
         if (!action.skipTracking) {
           store.dispatch({ type: ASYNC_END, promise: action.payload });
         }
