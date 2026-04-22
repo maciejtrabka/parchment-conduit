@@ -19,10 +19,10 @@ const ListPagination = props => {
   }
 
   const setPage = page => {
-    if(props.pager) {
+    if (props.pager) {
       props.onSetPage(page, props.pager(page));
-    }else {
-      props.onSetPage(page, agent.Articles.all(page))
+    } else {
+      props.onSetPage(page, agent.Articles.all(page));
     }
   };
 
