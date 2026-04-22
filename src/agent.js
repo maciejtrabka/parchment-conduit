@@ -3,14 +3,11 @@ import _superagent from 'superagent';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
-// In development, use same-origin /api so the CRA dev server can proxy and avoid
-// browser CORS errors to the RealWorld host. production build calls the API URL
-// directly (set REACT_APP_API_ROOT to override either environment).
-const API_ROOT =
-  process.env.REACT_APP_API_ROOT ||
-  (process.env.NODE_ENV === 'development'
-    ? '/api'
-    : 'https://conduit.productionready.io/api');
+// Use same-origin /api so a dev proxy (package.json) or Vercel rewrite can forward
+// to conduit.productionready.io—browser CORS to that host would otherwise
+// break login/register on localhost and on hosts like vercel.app. Override with
+// REACT_APP_API_ROOT (e.g. direct API URL) for static preview without a proxy.
+const API_ROOT = process.env.REACT_APP_API_ROOT || '/api';
 
 const encode = encodeURIComponent;
 const responseBody = res => res.body;

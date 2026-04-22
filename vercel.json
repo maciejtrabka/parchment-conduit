@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://conduit.productionready.io/api/:path*"
+    }
+  ]
+}
