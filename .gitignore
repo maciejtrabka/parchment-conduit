@@ -14,3 +14,14 @@ build
 .env
 npm-debug.log
 .idea
+
+# PR browser agent (create-pr-browser-agent)
+pr-context/
+pr-agent*.txt
+pr-agent-pr-comment.md
+pr-agent-screenshot-viewport.png
+pr-agent-screenshot-fullpage.png
+pr-agent-verdict-raw.txt
+pr-agent-diagnostics.txt
+pr-agent-bug-*.png
+pr-agent.log
