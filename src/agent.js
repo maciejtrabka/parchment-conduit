@@ -3,7 +3,14 @@ import _superagent from 'superagent';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
-const API_ROOT = 'https://conduit.productionready.io/api';
+// In development, use same-origin /api so the CRA dev server can proxy and avoid
+// browser CORS errors to the RealWorld host. production build calls the API URL
+// directly (set REACT_APP_API_ROOT to override either environment).
+const API_ROOT =
+  process.env.REACT_APP_API_ROOT ||
+  (process.env.NODE_ENV === 'development'
+    ? '/api'
+    : 'https://conduit.productionready.io/api');
 
 const encode = encodeURIComponent;
 const responseBody = res => res.body;
