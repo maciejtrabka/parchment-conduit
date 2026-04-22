@@ -188,6 +188,14 @@ a:focus {
   color: rgba(255, 250, 240, 0.95);
 }
 
+.home-page .banner .banner-lede {
+  font-size: 1.05rem;
+  max-width: 36rem;
+  margin: 0.75rem auto 0;
+  line-height: 1.5;
+  color: rgba(255, 250, 240, 0.88);
+}
+
 /* Article / profile inner banners */
 .article-page .banner {
   color: #fdf8f0;
@@ -232,6 +240,34 @@ a:focus {
   border: 1px solid var(--parchment-sand);
   border-radius: 8px;
   box-shadow: 0 2px 8px var(--parchment-shadow);
+}
+
+.home-page .sidebar--home {
+  border-left: 3px solid var(--parchment-accent);
+}
+
+.home-page .sidebar .sidebar-block {
+  margin-bottom: 1rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(139, 122, 106, 0.2);
+}
+
+.home-page .sidebar .sidebar-text {
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--parchment-muted);
+  margin-bottom: 0;
+}
+
+.home-page .sidebar .sidebar-hint-silk {
+  display: block;
+  margin: 0.35rem 0 0.65rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--parchment-surface);
 }
 
 .sidebar p {

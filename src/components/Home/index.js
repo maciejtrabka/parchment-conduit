@@ -52,9 +52,21 @@ class Home extends React.Component {
             <MainView />
 
             <div className="col-md-3">
-              <div className="sidebar">
+              <div className="sidebar sidebar--home">
+
+                <div className="sidebar-block">
+                  <p>About Parchment</p>
+                  <p className="sidebar-text">
+                    Parchment is a Conduit client with a calmer, paper-inspired look. The global list loads from the
+                    public API; your feed and favorites use your account when you sign in.
+                  </p>
+                </div>
 
                 <p>Popular Tags</p>
+
+                <span className="sidebar-hint-silk" aria-hidden="true">
+                  Click a tag below to filter the article list; choose Global Feed to clear the filter.
+                </span>
 
                 <Tags
                   tags={this.props.tags}
