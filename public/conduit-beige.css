@@ -748,6 +748,19 @@ a:focus {
   color: var(--parchment-cream) !important;
 }
 
+.auth-page .auth-card {
+  border: 1px solid var(--parchment-accent);
+  border-radius: 10px;
+  padding: 1.5rem 1.25rem 1.25rem;
+  background: rgba(255, 252, 244, 0.5);
+  margin-top: 1rem;
+  box-shadow: 0 1px 0 rgba(139, 122, 106, 0.08);
+}
+
+.auth-page .btn.btn-primary {
+  color: transparent;
+}
+
 .text-xs-center {
   text-align: center !important;
 }
