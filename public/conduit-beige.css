@@ -329,20 +329,27 @@ a:focus {
 .article-meta img {
   display: inline-block;
   vertical-align: middle;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 30px;
   object-fit: cover;
   border: 2px solid #fff;
   box-shadow: 0 0 0 1px var(--parchment-sand);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-meta a:hover img,
+.article-meta a:hover img {
+  transform: scale(1.06);
+  box-shadow: 0 0 0 2px var(--parchment-accent);
 }
 
 .post-meta .info,
 .article-meta .info {
-  margin: 0 0.4rem 0 0.45rem;
+  margin: 0 0.5rem 0 0.6rem;
   display: inline-block;
   vertical-align: middle;
-  line-height: 1.1rem;
+  line-height: 1.2rem;
 }
 
 .post-meta .author,
@@ -351,6 +358,14 @@ a:focus {
   font-weight: 600 !important;
   color: var(--parchment-accent);
   font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  transition: color 0.15s ease;
+}
+
+.post-meta .author:hover,
+.article-meta .author:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .post-meta .date,
@@ -358,7 +373,10 @@ a:focus {
   color: #9a8a7a;
   font-size: 0.8rem;
   display: block;
-  margin-top: 0.1rem;
+  margin-top: 0.15rem;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 /* Article page banner: light text on author line */
