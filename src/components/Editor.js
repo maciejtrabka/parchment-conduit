@@ -38,7 +38,7 @@ class Editor extends React.Component {
       key => ev => this.props.onUpdateField(key, ev.target.value);
     this.changeTitle = updateFieldEvent('title');
     this.changeDescription = updateFieldEvent('description');
-    this.changeBody = updateFieldEvent('body');
+    this.changeBody = updateFieldEvent('description');
     this.changeTagInput = updateFieldEvent('tagInput');
 
     this.watchForEnter = ev => {
@@ -99,6 +99,10 @@ class Editor extends React.Component {
             <div className="col-md-10 offset-md-1 col-xs-12">
 
               <ListErrors errors={this.props.errors}></ListErrors>
+
+              <p className="editor-intro text-xs-center">
+                <em>Share your thoughts with the community.</em>
+              </p>
 
               <form>
                 <fieldset>
