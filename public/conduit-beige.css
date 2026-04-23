@@ -190,9 +190,10 @@ a:focus {
 
 .home-page .banner .banner-lede {
   font-size: 1.05rem;
-  max-width: 36rem;
-  margin: 0.75rem auto 0;
-  line-height: 1.5;
+  max-width: 42rem;
+  margin: 1rem auto 0;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
   color: rgba(255, 250, 240, 0.88);
 }
 
