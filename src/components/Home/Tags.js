@@ -1,5 +1,4 @@
 import React from 'react';
-import agent from '../../agent';
 
 const Tags = props => {
   const tags = props.tags;
@@ -10,11 +9,6 @@ const Tags = props => {
           tags.map(tag => {
             const handleClick = ev => {
               ev.preventDefault();
-              props.onClickTag(
-                tag,
-                page => agent.Articles.byTag(tag, page),
-                agent.Articles.byTag(tag, 0)
-              );
             };
 
             return (
